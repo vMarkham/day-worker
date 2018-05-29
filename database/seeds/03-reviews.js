@@ -37,4 +37,7 @@ exports.seed = function(knex, Promise) {
         }
       ]);
     });
+    .then(() => {
+      return knex.raw(`SELECT setval('reviews_id_seq', (SELECT MAX(id) FROM reviews));`)
+    })
 };
