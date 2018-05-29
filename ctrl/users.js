@@ -1,5 +1,5 @@
 const ctrl = require('./ctrl.js')(`users`)
-const usersModel = require('../model/users.js')
+const { usersModel } = require('../model')
 
 class users extends ctrl{
   constructor(){

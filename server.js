@@ -8,13 +8,15 @@ const path = require('path')
 
 const {
     userRouter: users,
+    helpWantedRouter: helpWanted
 } = require('./routes')
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 
-app.use('/api/users', users)
+app.use('/api/users', users )
+app.use('/api/helpWanted', helpWanted )
 
 
 app.use((req, res) => {
