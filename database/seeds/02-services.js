@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
         {id: 4, service: "Tile"},
         {id: 5, service: "Landscape"}
       ]);
-    });
+    })
     .then(() => {
       return knex.raw(`SELECT setval('services_id_seq', (SELECT MAX(id) FROM services));`)
     })

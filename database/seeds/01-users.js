@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert([
         {
           id: 1,
-          user_name: 'Wood_shop_guy',
+          username: 'Wood_shop_guy',
           name:"Woody",
           email:"woodWorker@gmail.com",
           phone:"555-555-5555",
@@ -16,8 +16,8 @@ exports.seed = function(knex, Promise) {
          },
         {
           id: 2,
-          user_name: 'tile_guy',
-          name: "Thom"
+          username: 'tile_guy',
+          name: "Thom",
           email:"4tile@gmail.com",
           phone:"111-111-1111",
           zipcode:98033,
@@ -25,15 +25,15 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
-          user_name: 'Fix_your_fence',
-          name:"Phill"
+          username: 'Fix_your_fence',
+          name:"Phill",
           email:"fenceGuy@gmail.com",
           phone:"333-333-3333",
           zipcode:98036,
           password:"password"
         }
       ]);
-    });
+    })
     .then(() => {
       return knex.raw(`SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));`)
     })

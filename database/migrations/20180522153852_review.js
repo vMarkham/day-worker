@@ -6,9 +6,9 @@ exports.up = function(knex, Promise) {
     table.string('title', 35).notNullable()
     table.integer("review_author").notNullable()
     table.integer("review_about").notNullable()
-    talbe.integer("rate").notNullable()
-    talbe.string("photo")
-    talbe.string("blurb", 1000)
+    table.integer("rate").notNullable()
+    table.string("photo")
+    table.string("blurb", 1000)
     table.integer("service_type").notNullable()
   })
 }
