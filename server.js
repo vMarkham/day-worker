@@ -6,15 +6,15 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const path = require('path')
 
-// const {
-//     userRouter: users,
-// } = require('./routes')
+const {
+    userRouter: users,
+} = require('./routes')
 
 app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 
-// app.use('/api/users', users)
+app.use('/api/users', users)
 
 
 app.use((req, res) => {
