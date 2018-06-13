@@ -6,8 +6,10 @@ class usersModel extends Model {
     super()
   }
 
-  static userName(username){
-    return db('users').where({username}).then(result=>result[0])
+  static userName(email){
+    console.log(email)
+    return db('users').where({ email })
+    .then(result=>result[0])
   }
 
 }

@@ -10,14 +10,8 @@ class tokenCtrl extends ctrl {
   }
 
   static makeToken ( req, res, next ) {
-    const { name, orgID, admin } = req.userData
-    const token = jwt.sign({
-      name,
-      orgID,
-      admin
-    },
-     SECRET_KEY,
-    { expiresIn: '10h' })
+    const { name } = req.userData
+    const token = jwt.sign({name}, SECRET_KEY, { expiresIn: '10h' })
     console.log('this is the token', token);
     req.newToken = token
     res.status(200).json({token})
@@ -33,15 +27,17 @@ class tokenCtrl extends ctrl {
   }
 
   static checkPass(req, res, next) {
-    const { pass } = req.body
-    usersModel.userName(req.body.email)
+    console.log(req.body);
+    const { password, email } = req.body
+    usersModel.userName(email)
     .then(result=>{
+      console.log(result, password, "result");
       const dataPass = result.password
-      req.body.admin = result.admin
       req.userData = result
 
-      let check = bcrypt.compare( pass, dataPass, (err, work)=>{
-        work ? next() : res.status(401).json({message:"Bad Password"})
+      let check = bcrypt.compare( password, dataPass, (err, work)=>{
+        console.log(err, work, "check it out");
+        err ? res.status(401).json({message:"Bad Password"}) : next() 
       })
     })
   }

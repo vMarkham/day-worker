@@ -26,7 +26,7 @@ class users extends ctrl{
       let collection = {}
       result.forEach(user=>{
         if (user.username == req.body.create.username){
-          console.log('bad username');
+          console.log('username taken');
           collection.username = "taken"
           }
         if(user.email == req.body.create.email){
@@ -45,11 +45,12 @@ class users extends ctrl{
         return res.status(400).json({message:"that username is taken"})
       }
       else{
-        console.log("here");
+        console.log("Email and username not taken");
         next()
       }
     })
   }
+
 
 }
 
