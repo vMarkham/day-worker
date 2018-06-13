@@ -7,7 +7,6 @@ class usersModel extends Model {
   }
 
   static userName(email){
-    console.log(email)
     return db('users').where({ email })
     .then(result=>result[0])
   }

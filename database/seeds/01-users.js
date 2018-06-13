@@ -12,7 +12,7 @@ exports.seed = function(knex, Promise) {
           email:"woodWorker@gmail.com",
           phone:"555-555-5555",
           zipcode:98034,
-          password:"password"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
          },
         {
           id: 2,

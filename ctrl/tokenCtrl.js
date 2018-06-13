@@ -13,7 +13,7 @@ class tokenCtrl extends ctrl {
     const { name } = req.userData
     const token = jwt.sign({name}, SECRET_KEY, { expiresIn: '10h' })
     console.log('this is the token', token);
-    req.newToken = token
+    // req.newToken = token
     res.status(200).json({token})
   }
 
@@ -30,14 +30,15 @@ class tokenCtrl extends ctrl {
     console.log(req.body);
     const { password, email } = req.body
     usersModel.userName(email)
+
     .then(result=>{
-      console.log(result, password, "result");
-      const dataPass = result.password
+      console.log(result, "result");
+      const hashPass = result.password
       req.userData = result
 
-      let check = bcrypt.compare( password, dataPass, (err, work)=>{
+      bcrypt.compare( password, hashPass, (err, work)=>{
         console.log(err, work, "check it out");
-        err ? res.status(401).json({message:"Bad Password"}) : next() 
+        work ? next() : res.status(401).json({message:"Bad Password"})
       })
     })
   }
