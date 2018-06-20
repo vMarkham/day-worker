@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
           email:"4tile@gmail.com",
           phone:"111-111-1111",
           zipcode:98033,
-          password:"password"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
         },
         {
           id: 3,
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           email:"fenceGuy@gmail.com",
           phone:"333-333-3333",
           zipcode:98036,
-          password:"password"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
         }
       ]);
     })
