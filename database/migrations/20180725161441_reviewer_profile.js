@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('reviewer_profile', table=>{
     table.increments()
-    table.integer('user_ID'),notNullable()
+    table.integer('user_ID').notNullable()
     table.string("blurb")
   })
 }

@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
           email:"woodWorker@gmail.com",
           phone:"555-555-5555",
           zipcode:98034,
-          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy",
+          user_kind:"worker"
          },
         {
           id: 2,
@@ -21,7 +22,8 @@ exports.seed = function(knex, Promise) {
           email:"4tile@gmail.com",
           phone:"111-111-1111",
           zipcode:98033,
-          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy",
+          user_kind:"worker"
         },
         {
           id: 3,
@@ -30,7 +32,8 @@ exports.seed = function(knex, Promise) {
           email:"fenceGuy@gmail.com",
           phone:"333-333-3333",
           zipcode:98036,
-          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy"
+          password:"$2a$10$iBZ0kveJaUy6qpliztp1remU8VPw.9Qdzs9aaFbTUf21r/6BifHwy",
+          user_kind:"worker"
         }
       ]);
     })

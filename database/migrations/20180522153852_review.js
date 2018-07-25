@@ -3,9 +3,9 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('reviews', table=>{
     table.increments()
-    table.integer('worker_user_ID'),notNullable()
-    table.integer('project_ID'),notNullable()
-    table.integer('reviewer_user_ID'),notNullable()
+    table.integer('worker_user_ID').notNullable()
+    table.integer('project_ID').notNullable()
+    table.integer('reviewer_user_ID').notNullable()
     table.string('title', 35).notNullable()
     table.integer("review_author").notNullable()
     table.integer("review_about").notNullable()
