@@ -27,7 +27,7 @@ class tokenCtrl extends ctrl {
   }
 
   static checkPass(req, res, next) {
-    console.log(req.body);
+    console.log(req.body, "here")
     const { password, email } = req.body
     usersModel.userName(email)
 
