@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.string('password').notNullable()
     table.integer("zipcode").notNullable()
     table.string('phone').notNullable()
+    table.string('user_kind').notNullable()
   })
 }
 

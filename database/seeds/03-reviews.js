@@ -7,6 +7,9 @@ exports.seed = function(knex, Promise) {
       return knex('reviews').insert([
         {
           id: 1,
+          worker_user_ID: 0,
+          reviewer_user_ID: 99,
+          project_ID: 5,
           title: 'he did will',
           review_author:1,
           review_about:2,
@@ -17,6 +20,9 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 2,
+          worker_user_ID: 0,
+          reviewer_user_ID: 99,
+          project_ID: 5,
           title: 'really bad job',
           review_author:2,
           review_about:1,
@@ -27,6 +33,9 @@ exports.seed = function(knex, Promise) {
         },
         {
           id: 3,
+          worker_user_ID: 0,
+          reviewer_user_ID: 99,
+          project_ID: 5,
           title: 'worth every penny',
           review_author:3,
           review_about:1,
