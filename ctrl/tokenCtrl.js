@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = "Day_Trader"
+const SECRET_KEY = 'Day_Trader'
 const bcrypt = require('bcryptjs')
 const ctrl = require('./ctrl.js')(`users`)
 const { usersModel } = require('../model')
@@ -20,25 +20,25 @@ class tokenCtrl extends ctrl {
   static checkToken( req, res, next){
     const { token } = req.headers
     jwt.verify(token, SECRET_KEY, (err, decode)=>{
-      err ? res.status(400).json({message:"Bad Token", err}) : req.decode = decode
+      err ? res.status(400).json({message:'Bad Token', err}) : req.decode = decode
     })
-    // console.log("checking if it got decoded", req.decode)
+    // console.log('checking if it got decoded', req.decode)
     next()
   }
 
   static checkPass(req, res, next) {
-    console.log(req.body, "here")
+    console.log(req.body, 'here')
     const { password, email } = req.body
     usersModel.userName(email)
 
     .then(result=>{
-      console.log(result, "result");
+      console.log(result, 'result');
       const hashPass = result.password
       req.userData = result
 
       bcrypt.compare( password, hashPass, (err, work)=>{
-        console.log(err, work, "check it out");
-        work ? next() : res.status(401).json({message:"Bad Password"})
+        console.log(err, work, 'check it out');
+        work ? next() : res.status(401).json({message:'Bad Password'})
       })
     })
   }
@@ -46,7 +46,7 @@ class tokenCtrl extends ctrl {
   static verifyToken(req, res, next){
     const { token } = req.headers
     jwt.verify(token, SECRET_KEY, (err, decode)=>{
-      err ? res.status(400).json({message:"Bad Token", err}) : res.status(200).json({ token:decode })
+      err ? res.status(400).json({message:'Bad Token', err}) : res.status(200).json({ token:decode })
     })
   }
 
