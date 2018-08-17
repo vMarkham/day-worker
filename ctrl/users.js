@@ -49,6 +49,7 @@ class users extends ctrl{
         next()
       }
     })
+    .catch(err => next(err))
   }
 
 
