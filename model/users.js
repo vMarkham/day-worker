@@ -11,6 +11,19 @@ class usersModel extends Model {
     .then(result=>result[0])
   }
 
+  static getUserByEmail(email){
+    return db('users')
+      .where({ email })
+      .first()
+  }
+
+  static getUserByUsername(username) {
+    return db('users')
+      .where({ username })
+      .first()
+
+  }
+
 }
 
 module.exports= usersModel
