@@ -9,6 +9,7 @@ module.exports = name => {
                     [name]: response
                 })
             })
+            .catch(err => next(err))
         }
 
         static one(req, res, next) {
@@ -17,6 +18,7 @@ module.exports = name => {
                     [name]: response
                 })
             })
+            .catch(err => next(err))    
         }
 
         static create(req, res, next) {
@@ -25,6 +27,7 @@ module.exports = name => {
                     [name]: response
                 })
             })
+            .catch(err => next(err))
         }
 
         static update(req, res, next) {
@@ -33,6 +36,7 @@ module.exports = name => {
                     [name]: response
                 })
             })
+            .catch(err => next(err))
         }
 
         static destroy(req, res, next) {
@@ -41,6 +45,7 @@ module.exports = name => {
                     [name]: response
                 })
             })
+            .catch(err => next(err))
         }
     }
 
