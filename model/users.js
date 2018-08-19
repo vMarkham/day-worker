@@ -15,13 +15,20 @@ class usersModel extends Model {
     return db('users')
       .where({ email })
       .first()
+      .then(user => {
+        if (user.email === email) throw new Error('emailTaken')
+        return user
+      })
   }
 
   static getUserByUsername(username) {
     return db('users')
       .where({ username })
       .first()
-
+      .then(user => {
+        if (user.username === username) throw new Error('usernameTaken')
+        return user
+      })
   }
 
 }

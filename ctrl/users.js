@@ -24,23 +24,35 @@ class users extends ctrl{
     // !zipcode ? res.status(400).json({message: 'where are you looking for work?'}) : null
     // !phone ? res.status(400).json({message: 'How do we contact you?'}) : null
     // !email ? res.status(400).json({message: 'Please supply an Email'}) : null
-    next()
+    // next()
   }
 
   static availableCred(req, res, next){
-    usersModel.all()
-      .then(result=>{
-        let collection = {}
-        result.forEach(user=>{
-          if (user.username == req.body.create.username){
-            collection.username = 'taken'
-            }
-          if(user.email == req.body.create.email){
-            collection.email='taken'
-          }
-        })
-        return collection
-      })
+    const { name, username, email, password, zipcode, phone } = req.body.create
+    if (!name) throw new Error ('registerNameWrong')
+    if (!username) throw new Error ('registerUsernameWrong')
+    if (!password) throw new Error ('registerPasswordWrong')
+    if (!zipcode) throw new Error ('registerZipWrong')
+    if (!phone) throw new Error ('registerPhoneWrong')
+    if (!email) throw new Error ('registerEmailWrong')
+    usersModel.getUserByEmail(email)
+      .then(() => usersModel.getUserByUsername(username))
+      // .then(() => )
+      .catch(err => next(err))
+
+    // usersModel.all()
+      //   .then(result=>{
+      //     let collection = {}
+      //     result.forEach(user=>{
+      //       if (user.username == req.body.create.username){
+      //         collection.username = 'taken'
+      //         }
+      //       if(user.email == req.body.create.email){
+      //         collection.email='taken'
+      //       }
+      //     })
+      //     return collection
+      //   })
       // .then(result=>{
       //   console.log(result, 'after checks')
       //   if(result.email==='taken'){
@@ -54,7 +66,6 @@ class users extends ctrl{
       //     next()
       //   }
       // })
-      .catch(err => next(err))
   }
 
 
