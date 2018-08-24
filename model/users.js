@@ -7,8 +7,9 @@ class usersModel extends Model {
   }
 
   static userName(email){
-    return db('users').where({ email })
-    .then(result=>result[0])
+    return db('users')
+      .where({ email })
+      .first()
   }
 
   static getUserByEmail(email){
@@ -19,7 +20,7 @@ class usersModel extends Model {
         if (user.email === email) throw new Error('emailTaken')
         return user
       })
-  }
+  } 
 
   static getUserByUsername(username) {
     return db('users')
