@@ -1,5 +1,5 @@
 function processErrorMessage(err) {
-
+    console.log(err)
     if (err.message) {
         switch (err.message) {
             case 'registerNameWrong' : return { status: 400, message: 'A valid "Name" is required to register' }
