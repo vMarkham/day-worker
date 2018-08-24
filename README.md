@@ -56,4 +56,4 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
 ```
 
 **DELETE /api/users/:id**
-
+- Delete a user by ID
