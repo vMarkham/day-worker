@@ -10,6 +10,7 @@ function processErrorMessage(err) {
             case 'registerEmailWrong' : return { status: 400, message: 'A valid "Email" is required to register' }
             case 'emailTaken' : return { status: 400, message: 'The "Email" provided is already being used' }
             case 'usernameTaken' : return { status: 400, message: 'The "Username" provided is already being used' }
+            case 'aFieldRequired' : return { status: 400, message: 'At lease one(1) of the following fields is required: "name", "username", "email", "password", "zipcode", "phone"' }
 
             default:
                 return { status: 500, message: 'An internal server error has occurred.' }
@@ -18,3 +19,4 @@ function processErrorMessage(err) {
 }
 
 module.exports = processErrorMessage
+ 
