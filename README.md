@@ -19,7 +19,7 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
 **GET /api/users/:id**
 - generic/temp route for testing
 
-**POST /api/users**
+**POST /api/users/register**
 - Create a new user
     - required fields in body:
 ```
@@ -30,6 +30,16 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
     password,       // STRING
     zipcode,        // INTEGER
     phone           // STRING
+}
+```
+
+**POST /api/users/login**
+- Login existing user
+    - required fields in body:
+```
+{
+    email,          // STRING
+    password,       // STRING
 }
 ```
 
