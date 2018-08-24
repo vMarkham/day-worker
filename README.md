@@ -13,15 +13,13 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
 
 ## Routes
 
-**GET /api/users**
-- generic/temp route for testing
 
 **GET /api/users/:id**
-- generic/temp route for testing
+- Get a user by ID
 
 **POST /api/users/register**
 - Create a new user
-    - required fields in body:
+    - required fields in req.body.create:
 ```
 {
     name,           // STRING
@@ -35,7 +33,7 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
 
 **POST /api/users/login**
 - Login existing user
-    - required fields in body:
+    - required fields in req.body:
 ```
 {
     email,          // STRING
