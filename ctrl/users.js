@@ -4,7 +4,7 @@ const { usersModel } = require('../model')
 class users extends ctrl{
   constructor(){
     super()
-  }
+  } 
 
   static checkUser(req, res, next){
     const {
