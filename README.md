@@ -12,7 +12,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 
 ## Routes
 
-### UserRoutes --------------------------------------------------------------------------
+### ----- UserRoutes --------------------------------------------------------------------------
 
 **GET /api/users/:id**
 - Get a user by ID
@@ -99,7 +99,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 **DELETE /api/users/:id/projects/:pid**
 - Delete a project via it's ID aswell as the user's ID
 
-### ProjectsRoutes --------------------------------------------------------------------------
+### ----- ProjectsRoutes --------------------------------------------------------------------------
 
 **GET /api/projects/?......=......**
 - Get all jobs via zip or city
@@ -119,7 +119,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 - Remove worker from project's workers list
 
 
-### SkillsRoutes --------------------------------------------------------------------------
+### ----- SkillsRoutes --------------------------------------------------------------------------
 
 **POST /api/skills**
 - Add new skill to skills pool _-*-Admin only-*-_
@@ -131,7 +131,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 - Remove a skill from a user's skill list
 
 
-### ReviewsRoutes --------------------------------------------------------------------------
+### ----- ReviewsRoutes --------------------------------------------------------------------------
 
 **GET /api/users/:id/reviews**
 - Get all reviews for a specific user
