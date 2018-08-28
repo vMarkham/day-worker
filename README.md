@@ -121,93 +121,63 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 
 ### SkillsRoutes
 
-**GET /api/users/:id**
-- Get a user by ID
+**POST /api/skills**
+- Add new skill to skills pool *_Admin only_*
 
-**POST /api/users/register**
-- Create a new user
-    - required fields in req.body.create:
-```
-{
-    name,           // STRING
-    username,       // STRING
-    email,          // STRING
-    password,       // STRING
-    zipcode,        // INTEGER
-    phone           // STRING
-}
-```
+**POST /api/users/:id/skills**
+- Add a skill to a user's skill list
 
-**POST /api/users/login**
-- Login existing user
-    - required fields in req.body:
-```
-{
-    email,          // STRING
-    password,       // STRING
-}
-```
-
-**PATCH /api/users/:id**
-- Update current user info
-    - at least one(1) of the following fields in body is required:
-```
-{
-    name,           // STRING
-    username,       // STRING
-    email,          // STRING
-    password,       // STRING
-    zipcode,        // INTEGER
-    phone           // STRING
-}
-```
-
-**DELETE /api/users/:id**
-- Delete a user by ID
+**DELETE /api/users/:id/skills/:sid**
+- Remove a skill from a user's skill list
 
 
 ### ReviewsRoutes
 
-**GET /api/users/:id**
-- Get a user by ID
+**GET /api/users/:id/reviews**
+- Get all reviews for a specific user
 
-**POST /api/users/register**
-- Create a new user
+**GET /api/users/:id/reviews/:rid**
+- Get a specific review for a specific user
+
+**POST /api/users/:id/reviews**
+- Create a new review for a user
     - required fields in req.body.create:
 ```
 {
-    name,           // STRING
-    username,       // STRING
-    email,          // STRING
-    password,       // STRING
-    zipcode,        // INTEGER
-    phone           // STRING
+    email,              // STRING
+    password,           // STRING
+    worker_user_ID,     // INTEGER
+    project_ID,         // INTEGER
+    reviewer_user_ID,   // INTEGER
+    title,              // STRING   (max of 35 char)
+    review_author,      // INTEGER
+    review_about,       // INTEGER
+    rate,               // INTEGER
+    photo,              // STRING
+    blurb,              // STRING   (max of 1000 char)
+    service_type,       // INTEGER
 }
 ```
 
-**POST /api/users/login**
-- Login existing user
-    - required fields in req.body:
+**PATCH /api/users/:id/reviews/:rid**
+- Update a specific review for a user
+    - at least one(1) of the following fields in req.body.create is required:
 ```
 {
-    email,          // STRING
-    password,       // STRING
+    email,              // STRING
+    password,           // STRING
+    worker_user_ID,     // INTEGER
+    project_ID,         // INTEGER
+    reviewer_user_ID,   // INTEGER
+    title,              // STRING   (max of 35 char)
+    review_author,      // INTEGER
+    review_about,       // INTEGER
+    rate,               // INTEGER
+    photo,              // STRING
+    blurb,              // STRING   (max of 1000 char)
+    service_type,       // INTEGER
 }
 ```
 
-**PATCH /api/users/:id**
-- Update current user info
-    - at least one(1) of the following fields in body is required:
-```
-{
-    name,           // STRING
-    username,       // STRING
-    email,          // STRING
-    password,       // STRING
-    zipcode,        // INTEGER
-    phone           // STRING
-}
-```
-
-**DELETE /api/users/:id**
-- Delete a user by ID
+**DELETE /api/users/:id/reviews/:rid**
+- Delete a specific user's review
