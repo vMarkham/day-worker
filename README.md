@@ -79,7 +79,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 
 **PATCH /api/users/:id/projects/:pid**
 - Update an existing project for a current user
-    - at least one(1) of the following fields in body is required:    
+    - at least one(1) of the following fields in req.body is required:    
 ```
 {
     postUser,       // INTEGER
@@ -101,7 +101,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 
 ### ProjectsRoutes
 
-**GET /api/projects/?____=____**
+**GET /api/projects/?......=......**
 - Get all jobs via zip or city
     - Examples:
 ```
@@ -122,7 +122,7 @@ The goal of DayWorker is to create a bridge between day laborers and those looki
 ### SkillsRoutes
 
 **POST /api/skills**
-- Add new skill to skills pool *_Admin only_*
+- Add new skill to skills pool _-*-Admin only-*-_
 
 **POST /api/users/:id/skills**
 - Add a skill to a user's skill list
