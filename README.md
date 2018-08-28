@@ -4,7 +4,7 @@ Create the Uber of day traders who want to do yard work for a day or maybe tile 
 
 ## Database Structure
 
-![]()
+![](./images/day_worker_ERD_rough.png)
 
 ## Setup
 1. Fork and clone this repository
