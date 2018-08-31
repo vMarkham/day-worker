@@ -1,10 +1,11 @@
 const path = require('path')
+require('dotenv').load()
 
 module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: 'postgres://localhost:5432/day-worker-dev',
+    connection: `postgres://localhost/${process.env.DATABASE_NAME}`,
     migrations: {
       directory: path.join(__dirname, 'database', 'migrations')
     },

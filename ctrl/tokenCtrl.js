@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = 'Day_Trader'
+const SECRET_KEY = process.env.SECRET_KEY
 const bcrypt = require('bcryptjs')
 const ctrl = require('./ctrl.js')(`users`)
 const { usersModel } = require('../model')
