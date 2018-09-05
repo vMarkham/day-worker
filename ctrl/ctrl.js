@@ -2,7 +2,7 @@ module.exports = name => {
     const Model = require(`../model/${ name }.js`)
 
 
-    class Controller {
+    class 2 {
         static all(req, res, next) {
             Model.all().then(response => {
                 res.json({
